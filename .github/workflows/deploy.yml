@@ -10,12 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install, build, and upload
-        uses: withastro/action@v3
+      - uses: actions/checkout@v4
+      - uses: withastro/action@v3
         with:
-          package-manager: npm #
+          package-manager: npm
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -23,6 +21,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
