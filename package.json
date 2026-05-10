@@ -1,5 +1,4 @@
 {
-  "name": floraguere2026
   "type": "module",
   "dependencies": {
     "astro": "latest"
